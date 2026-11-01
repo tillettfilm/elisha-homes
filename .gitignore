@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+.claude/
+
+# Originals stay local, out of the published site.
+source/
