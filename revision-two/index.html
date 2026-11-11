@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elisha Homes · Revision Two · Tillett Film</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Project 01: The Studio, revision two. Your client on camera in the finished studio, by Tillett Film.">
+<meta property="og:title" content="Elisha Homes: revision two">
+<meta property="og:description" content="Your client on camera in the finished studio, with London to follow.">
+<meta property="og:image" content="https://tillettfilm.github.io/elisha-homes/assets/shared/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://tillettfilm.github.io/elisha-homes/revision-two/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Elisha Homes: revision two">
+<meta name="twitter:image" content="https://tillettfilm.github.io/elisha-homes/assets/shared/og.jpg">
+<link rel="preload" as="image" href="../assets/lookbook/looping-film-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     Tillett Film · Elisha Homes · Revision two
+     One page: the film over the edit timeline, two options,
+     Project 02, a short note from Charlie, then Greenlight. Version one stays at the
+     root of the site and this page borrows its assets from there.
+     ========================================================= */
+
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f5f4f1;
+    --bg-invert: #0a0a0a;
+    --ink: #0a0a0a;
+    --ink-soft: #5a5a58;
+    --ink-muted: #8a8a86;
+    --line: rgba(10,10,10,0.10);
+    --line-strong: rgba(10,10,10,0.20);
+    --line-invert: rgba(255,255,255,0.14);
+    --serif: 'Italiana', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --measure: 1040px;
+  }
+
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .heading-large {
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  /* ===== Top bar ===== */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .brandmark {
+    font-size: 13px; font-weight: 600;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  @media (max-width: 600px) {
+    .topbar { padding: 14px 18px; }
+    .brandmark { font-size: 12px; }
+  }
+
+  /* ===== One page ===== */
+  .page { max-width: calc(var(--measure) + 64px); margin: 0 auto; padding: 92px 32px 120px; }
+  .section { margin-top: 56px; }
+  @media (max-width: 700px) {
+    .page { padding: 76px 18px 72px; }
+    .section { margin-top: 44px; }
+  }
+
+  /* ===== The film over the edit timeline =====
+     Stacked like a Premiere Pro window: the picture playing above, the
+     sequence beneath, one block under one layer of grain. */
+  .hero {
+    position: relative;
+    display: grid; gap: 2px;
+    background: var(--ink);
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; z-index: 2;
+    background: url("../assets/shared/grain.png") repeat;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .hero-film, .hero-timeline { position: relative; overflow: hidden; }
+  .hero-film {
+    aspect-ratio: 24 / 7;
+    display: flex; align-items: center; justify-content: center;
+    color: #EFEEE6;
+    container-type: inline-size;
+  }
+  .hero-timeline { aspect-ratio: 7 / 1; }
+  .hero video, .hero img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-timeline img { object-position: 40% 55%; }
+  /* A flat 25% black on both, so the type reads and the two sit together */
+  .hero-film::before, .hero-timeline::before {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background: rgba(0,0,0,0.25);
+  }
+  .hero-title { position: relative; z-index: 1; width: max-content; max-width: calc(100% - 48px); }
+  .hero-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.6vw;
+    font-size: 3.4cqw;
+    line-height: 1;
+    letter-spacing: 0.42em;
+    padding-left: 0.42em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .hero-sub {
+    display: flex; justify-content: space-between; gap: 16px;
+    margin-top: 12px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid currentColor;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Charlie's note, just above Greenlight */
+  .note { margin-top: 44px; max-width: 680px; }
+  .note p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); }
+  .note p + p { margin-top: 10px; }
+
+  @media (max-width: 700px) {
+    .hero-film { aspect-ratio: 2 / 1; }
+    .hero-timeline { aspect-ratio: 4 / 1; }
+    .hero-title { max-width: calc(100% - 28px); }
+    .hero-name {
+      font-size: 4.6vw; font-size: 6.2cqw;
+      letter-spacing: 0.28em; padding-left: 0.28em;
+      -webkit-text-stroke: 0.2px currentColor;
+    }
+    .hero-sub { margin-top: 8px; padding-bottom: 5px; font-size: 7px; letter-spacing: 0.14em; gap: 12px; }
+  }
+  @media (max-width: 350px) {
+    .hero-sub { letter-spacing: 0.1em; }
+  }
+
+  /* ===== Two options ===== */
+  .options-head { margin-bottom: 24px; }
+
+  /* Two separate black blocks, equal in size */
+  .invest {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .path {
+    background: var(--bg-invert); color: #fff;
+    padding: 30px 28px 26px;
+    display: flex; flex-direction: column;
+  }
+  .path-name {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  .invest-amount {
+    margin-top: 8px;
+    font-size: clamp(2.1rem, 3.6vw, 2.8rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .invest-list {
+    list-style: none;
+    margin: 20px 0 0; padding-top: 14px;
+    border-top: 1px solid var(--line-invert);
+    color: rgba(255,255,255,0.88);
+    font-size: 13.5px; line-height: 1.5;
+  }
+  .invest-list li { display: flex; gap: 10px; padding: 4px 0; }
+  .invest-list li::before { content: "·"; color: rgba(255,255,255,0.4); flex: none; }
+  @media (max-width: 860px) {
+    .path { padding: 26px 20px 22px; }
+  }
+  @media (max-width: 700px) {
+    .invest { grid-template-columns: 1fr; }
+    .path { padding: 26px 22px 22px; }
+  }
+
+  .terms { margin-top: 18px; font-size: 13px; line-height: 1.7; color: var(--ink-soft); max-width: 780px; }
+
+  /* Project 02 sits on the warmer page colour, under the two options */
+  .london { margin-top: 30px; padding: 28px; background: var(--bg-alt); }
+  .london-tier {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  /* A line-drawn crown, on the Project 02 label only */
+  .crown {
+    flex: none; display: block;
+    width: 12px; height: 12px;
+    fill: none; stroke: #A8874A; stroke-width: 1;
+  }
+  .london .path-name { margin-top: 14px; }
+  .london-lead { margin-top: 10px; font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); max-width: 780px; }
+  .london-list { list-style: none; margin-top: 12px; font-size: 14px; line-height: 1.55; max-width: 780px; }
+  .london-list li { display: flex; gap: 10px; padding: 5px 0; }
+  .london-list li::before { content: "·"; color: var(--ink-muted); flex: none; }
+  .london-foot {
+    margin-top: 14px; padding-top: 14px;
+    border-top: 1px solid var(--line-strong);
+    font-size: 13px; line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 700px) { .london { padding: 24px 22px; } }
+
+  .hold { margin-top: 24px; font-size: 14px; line-height: 1.6; font-weight: 500; max-width: 780px; }
+
+  /* ===== Greenlight ===== */
+  .greenlight {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+  .agreement-quote {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    margin-bottom: 22px;
+  }
+  .agreement-steps {
+    display: grid; gap: 10px;
+    padding: 16px 0;
+    margin-bottom: 26px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .agreement-step { display: flex; align-items: baseline; gap: 16px; font-size: 14px; line-height: 1.45; }
+  .agreement-step-num {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--ink-muted);
+    flex-shrink: 0; width: 28px;
+  }
+
+  .choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; border: none; }
+  .choice legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .choice label {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 15px 16px;
+    border: 1px solid var(--line-strong);
+    cursor: pointer;
+    font-size: 14px; font-weight: 600;
+    transition: border-color 0.2s ease;
+  }
+  .choice label span { font-weight: 400; color: var(--ink-soft); }
+  .choice input { position: absolute; opacity: 0; pointer-events: none; }
+  .choice label:has(input:checked) { border-color: var(--ink); background: var(--bg-alt); box-shadow: inset 0 0 0 1px var(--ink); }
+  .choice label:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .field-label { display: block; font-size: 12px; color: var(--ink-soft); margin-bottom: 6px; }
+  .note-field {
+    width: 100%; max-width: 520px;
+    display: block;
+    min-height: 76px;
+    padding: 12px 14px;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    font-family: var(--sans); font-size: 14px; line-height: 1.5;
+    color: var(--ink);
+    resize: vertical;
+    margin-bottom: 20px;
+    border-radius: 0;
+  }
+  .note-field:focus { outline: none; border-color: var(--ink); }
+  @media (max-width: 700px) { .choice { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .note-field { font-size: 16px; } }
+
+  .gl-row { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
+  .btn-cta {
+    display: inline-block;
+    padding: 15px 32px;
+    background: var(--ink); color: #fff;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: all 0.25s ease;
+  }
+  .btn-cta:disabled { cursor: progress; }
+  @media (hover: hover) {
+    .btn-cta:hover:not(:disabled) { background: transparent; color: var(--ink); }
+    .choice label:hover { border-color: var(--ink); }
+  }
+  .signature { display: flex; align-items: center; gap: 14px; }
+  .signature-mark {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ink); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600;
+  }
+  .signature-name { font-size: 14px; font-weight: 600; }
+  .signature-role { font-size: 12px; color: var(--ink-muted); }
+  @media (max-width: 600px) {
+    .gl-row { flex-direction: column; align-items: stretch; }
+    .btn-cta { width: 100%; text-align: center; }
+  }
+  /* Above the button, so on a phone the line is in view when the button is pressed */
+  .send-fail { margin-bottom: 14px; font-size: 13px; line-height: 1.5; }
+  .send-fail a { color: inherit; }
+
+  /* ===== Closing screen ===== */
+  .closing {
+    position: fixed; inset: 0; z-index: 1000;
+    background: #000;
+    display: none;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: 30px;
+    text-align: center;
+  }
+  .closing.visible { display: flex; }
+  /* A hard cut to black, then the thank-you comes up like an end title */
+  .closing-text { opacity: 0; max-width: 560px; }
+  .closing.visible .closing-text { animation: closingIn 1.4s ease 1s both; }
+  @keyframes closingIn { from { opacity: 0; } to { opacity: 1; } }
+  .closing-tagline {
+    white-space: nowrap;
+    color: #fff;
+    font-size: clamp(2rem, 5.6vw, 4.2rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .closing-rule { width: 60px; height: 1px; background: rgba(255,255,255,0.4); margin: 0 auto 22px; }
+  .closing-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.28em; text-transform: uppercase;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .closing.visible .closing-text { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="brandmark">Tillett Film</div>
+</div>
+
+<main class="page">
+  <div class="hero">
+    <div class="hero-film">
+      <video id="loopFilm" muted loop playsinline preload="none" aria-hidden="true"
+             poster="../assets/lookbook/looping-film-poster.jpg"
+             data-src-hd="../assets/lookbook/looping-film-1920.mp4"
+             data-src-sd="../assets/lookbook/looping-film-1280.mp4"></video>
+      <div class="hero-title">
+        <h1 class="hero-name">Elisha Homes</h1>
+        <div class="hero-sub">
+          <span>Project 01: The Studio</span>
+          <span>Revision Two</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-timeline">
+      <img src="../assets/lookbook/timeline-2160.jpg"
+           srcset="../assets/lookbook/timeline-1440.jpg 1440w, ../assets/lookbook/timeline-2160.jpg 2160w, ../assets/lookbook/timeline-2880.jpg 2880w"
+           sizes="(max-width: 1100px) 100vw, 1040px"
+           alt="The edit timeline in Premiere Pro">
+    </div>
+  </div>
+
+  <section class="section">
+    <h2 class="heading-large options-head">Two ways to start.</h2>
+
+    <div class="invest">
+      <div class="path">
+        <h3 class="path-name">The Testimonial</h3>
+        <div class="invest-amount">£1250</div>
+        <ul class="invest-list">
+          <li>Half a day at the finished studio</li>
+          <li>A 60-second testimonial film: your client on camera, the finished room, him playing in it</li>
+          <li>A 30-second cut for Instagram</li>
+        </ul>
+      </div>
+
+      <div class="path">
+        <h3 class="path-name">The Build Story</h3>
+        <div class="invest-amount">£2000</div>
+        <ul class="invest-list">
+          <li>Everything in The Testimonial</li>
+          <li>A 45-second build reel cut from your own footage, from the roof coming off to the finished room</li>
+          <li>Two more reels from the build and the finished room</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="terms">Half to book, half on the day the studio's finished. Pay by bank transfer or card, whichever's easier.</p>
+
+    <div class="london">
+      <div class="london-tier">
+        <svg class="crown" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 10 1.5 3.5 4.2 6 6 2l1.8 4 2.7-2.5-1 6.5z"/></svg>
+        Project 02
+      </div>
+      <h3 class="path-name">London</h3>
+      <p class="london-lead">When London lands, we document it start to finish. It's priced on its own once you've won it and know the scope.</p>
+      <p class="london-lead">Book either option now and London comes with:</p>
+      <ul class="london-list">
+        <li>A founder film, included. Worth £1500. Sixty seconds of you on camera: who Elisha Homes is and how you work.</li>
+        <li>Nothing to pay until you've signed London. Then a third at signing, a third mid-build and a third at handover.</li>
+      </ul>
+      <p class="london-foot">Holds for London or your next big job starting before 30 June 2027.</p>
+    </div>
+
+    <p class="hold">This holds until Friday 13 November, so we can lock the shoot day with you and your client.</p>
+  </section>
+
+  <div class="note">
+    <p>The piece that matters most right now is your client on camera. It's what the London client will want to see before they sign.</p>
+    <p>So I've built this around that. London is the next chapter.</p>
+    <p>Charlie</p>
+  </div>
+
+  <form class="greenlight" id="greenlightForm" novalidate>
+    <p class="agreement-quote">Press Greenlight. That is the paperwork.</p>
+    <div class="agreement-steps">
+      <div class="agreement-step"><span class="agreement-step-num">01</span><span>Choose one.</span></div>
+      <div class="agreement-step"><span class="agreement-step-num">02</span><span>I send the invoice for the first half and we lock the shoot day.</span></div>
+    </div>
+
+    <fieldset class="choice">
+      <legend>Choose one</legend>
+      <label><input type="radio" name="path" value="The Testimonial · £1250">The Testimonial <span>£1250</span></label>
+      <label><input type="radio" name="path" value="The Build Story · £2000">The Build Story <span>£2000</span></label>
+    </fieldset>
+
+    <label class="field-label" for="gNote">Anything to add? Optional.</label>
+    <textarea class="note-field" id="gNote" name="note"></textarea>
+
+    <p class="send-fail" id="choosePath" role="alert" hidden>Choose one first.</p>
+    <p class="send-fail" id="sendFail" role="alert" hidden>That didn't go through. Press Greenlight again or email <a href="mailto:charlie@tillettfilm.com">charlie@tillettfilm.com</a>.</p>
+
+    <div class="gl-row">
+      <button type="submit" class="btn-cta" id="signBtn">Greenlight →</button>
+      <div class="signature">
+        <div class="signature-mark">CT</div>
+        <div>
+          <div class="signature-name">Charlie Tillett</div>
+          <div class="signature-role">Director · Tillett Film</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</main>
+
+<!-- ============ CLOSING SCREEN ============ -->
+<div class="closing" id="closing" aria-live="polite">
+  <div class="closing-text">
+    <div class="closing-tagline">Thank you Lewis.</div>
+    <div class="closing-rule"></div>
+    <div class="closing-sub">Charlie Tillett</div>
+  </div>
+</div>
+
+<script>
+  const closing = document.getElementById('closing');
+
+  // The film plays while it's on screen. Sharper file for large or high-density screens.
+  const loopFilm = document.getElementById('loopFilm');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let filmInView = true;
+  function ensureFilmSource() {
+    if (loopFilm.getAttribute('src')) return;
+    const wide = window.innerWidth * (window.devicePixelRatio || 1) > 1700;
+    loopFilm.preload = 'auto';
+    loopFilm.src = wide ? loopFilm.dataset.srcHd : loopFilm.dataset.srcSd;
+  }
+  function syncFilm() {
+    if (filmInView && !document.hidden && !reduceMotion && !closing.classList.contains('visible')) {
+      ensureFilmSource();
+      loopFilm.muted = true;
+      const p = loopFilm.play();
+      if (p && p.catch) p.catch(() => {});
+    } else {
+      loopFilm.pause();
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      filmInView = entries[0].isIntersecting;
+      syncFilm();
+    }).observe(loopFilm);
+  }
+  // Opened in a background tab, or back from another app: pick the loop up again
+  document.addEventListener('visibilitychange', syncFilm);
+  syncFilm();
+
+  // Closing screen: a hard cut to black, then the thank-you
+  function playClosingScreen() {
+    closing.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    syncFilm();
+  }
+
+  // Greenlight
+  const FORMSPREE_ID = 'mnpdaygv';
+  const form = document.getElementById('greenlightForm');
+  const signBtn = document.getElementById('signBtn');
+  const noteField = document.getElementById('gNote');
+  const choosePath = document.getElementById('choosePath');
+  const sendFail = document.getElementById('sendFail');
+  const BTN_LABEL = signBtn.textContent;
+
+  form.addEventListener('change', () => { choosePath.hidden = true; });
+
+  // A plain form post: no preflight, and keepalive lets it finish even if the
+  // page is closed straight after. The thank-you only shows once Formspree has
+  // it; if it fails, the button comes back with a line to try again.
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const chosen = form.querySelector('input[name="path"]:checked');
+    if (!chosen) { choosePath.hidden = false; return; }
+    if (signBtn.disabled) return;
+    const path = chosen.value;
+    const note = noteField.value.trim();
+    signBtn.disabled = true;
+    signBtn.textContent = 'Sending…';
+    sendFail.hidden = true;
+
+    const data = new URLSearchParams({
+      _subject: 'Elisha Homes · Revision two · Greenlight · ' + path,
+      subject: 'Elisha Homes · Revision two · Greenlight · ' + path,
+      message: 'Lewis Frost Williams has greenlighted ' + path + ' on revision two. Send the invoice for half to book.',
+      path: path,
+      note: note || '(none)'
+    });
+
+    fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data,
+      keepalive: true
+    }).then(r => {
+      if (!r.ok) throw new Error('Formspree ' + r.status);
+      playClosingScreen();
+    }).catch(() => {
+      signBtn.disabled = false;
+      signBtn.textContent = BTN_LABEL;
+      sendFail.hidden = false;
+    });
+  });
+</script>
+
+</body>
+</html>
